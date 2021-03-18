@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Log In{% endblock %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/mystyle.css' %}">
+</head>
+
+<h1>Hey guys, welcome to my website</h1>
+<p><a href="{% url 'home' %}">Go Back</a></p>
+<p>This is Italia</p>
+<img src="{% static 'core/images/italy.jpg' alt='italia' %}">
+
+{% endblock %}

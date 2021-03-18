@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Log In{% endblock %}
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/mystyle.css' %}">
+</head>
+
+<h2>Login</h2>
+<form  method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type='submit'>Log In</button>
+    <a href="{% url "password_reset" %}">Forgot your password?</a>
+</form>
+
+{% endblock %}

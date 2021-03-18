@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+<link rel="stylesheet" href="{url 'core/css/mystyle.css' %}">
+</head>
+<h1>Homepage</h1>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/mystyle.css' %}">
+</head>
+
+<strong><h4> Welcome {% if user.is_authenticated %} {{user.username}} {% else %} visitor {% endif %}!</p></strong></h4>
+<p>Total number of users registered: {{count}}</p>
+<div id="img">
+<p>I like to program and make useful software for end users</p>
+{% if user.is_authenticated %}
+<img src="{% static 'core/images/profile_pic.jpg' alt='hey' %}"> <br>
+<br>
+<img src="{% static 'core/images/django.jpg' alt='hey' %}">
+{% endif %}
+</div>
+{% endblock %}
